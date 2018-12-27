@@ -1,5 +1,9 @@
 package com.example.apple.mvpframe.network;
 
+import com.example.apple.mvpframe.basemvp.basemodel.BaseModel;
+import com.example.apple.mvpframe.videobean.VideoBean;
+import retrofit2.http.GET;
+import rx.Observable;
 import static com.example.apple.mvpframe.AppConfig.isDebug;
 
 /**
@@ -20,4 +24,6 @@ public interface ApiService {
     /** 服务器域名 */
     String SERVER_ADDRESS = isDebug ? SERVER_ADDRESS_DEBUG : SERVER_ADDRESS_RELEASE;
 
+    @GET("")
+    Observable<BaseModel<VideoBean>> getVideoData();
 }
